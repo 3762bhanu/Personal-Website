@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/blog/index.xml">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="site-title">{{ .Site.Title }}</a>
+      <nav>
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}"{{ if eq $.RelPermalink .URL }} class="active"{{ end }}>{{ .Name }}</a>
+        {{ end }}
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    <div class="container">
+      <p>Posts: CC-BY-SA | Source code: AGPL-3.0</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+baseURL = "https://bhanuprakash.github.io/"
+languageCode = "en-us"
+title = "Bhanu Prakash Singh"
+
+[params]
+  description = "Software Engineer"
+  tagline = "Engineering, Systems, and Ideas"
+  email = "bhanu@example.com"
+  github = "https://github.com/bhanuprakash"
+  twitter = "https://twitter.com/bhanuprakash"
+  linkedin = "https://linkedin.com/in/bhanuprakash"
+
+[[menus.main]]
+  name = "About"
+  url = "/about/"
+  weight = 1
+
+[[menus.main]]
+  name = "Expertise"
+  url = "/expertise/"
+  weight = 2
+
+[[menus.main]]
+  name = "Experience"
+  url = "/experience/"
+  weight = 3
+
+[[menus.main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 4
+
+[[menus.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 5

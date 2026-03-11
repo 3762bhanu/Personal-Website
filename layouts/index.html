@@ -1,0 +1,15 @@
+{{ define "main" }}
+<section class="home">
+  <h1>{{ .Site.Title }}</h1>
+  <h2>{{ .Site.Params.tagline }}</h2>
+  <div class="links">
+    <a href="mailto:{{ .Site.Params.email }}">Email</a>
+    <a href="{{ .Site.Params.github }}" rel="noopener noreferrer">Github</a>
+    <a href="{{ .Site.Params.twitter }}" rel="noopener noreferrer">Twitter</a>
+    <a href="{{ .Site.Params.linkedin }}" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+  <div class="content">
+    {{ .Content }}
+  </div>
+</section>
+{{ end }}

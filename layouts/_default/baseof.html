@@ -2,30 +2,49 @@
 <html lang="{{ .Site.LanguageCode }}">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+Mono:400,600,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,500,700">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/blog/index.xml">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <a href="/" class="site-title">{{ .Site.Title }}</a>
-      <nav>
-        {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}"{{ if eq $.RelPermalink .URL }} class="active"{{ end }}>{{ .Name }}</a>
-        {{ end }}
+  <main class="wrapper">
+    <section class="container">
+      <nav class="topnav">
+        <a class="topnav-title" href="/">{{ .Site.Title }}</a>
+        <a href="javascript:void(0);" class="mobilemenu" onclick="toggleMenu()">Menu</a>
+        <ul id="topnav-items" class="topnav-list">
+          {{ range .Site.Menus.main }}
+          <li class="topnav-item">
+            <a class="topnav-link" href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
       </nav>
+    </section>
+    <div class="content">
+      {{ block "main" . }}{{ end }}
     </div>
-  </header>
-  <main class="container">
-    {{ block "main" . }}{{ end }}
+    <footer class="footer">
+      <section class="container">
+        <p class="ai-disclaimer"><i>All content on this website is handwritten.<br>This website does not contain AI-generated content.</i></p>
+        <br>
+        &copy; {{ now.Year }} <b>{{ .Site.Title }}</b>
+        <br>
+        <p class="site-disclaimer">
+          Posts: CC-BY-SA | Source code: AGPL-3.0
+        </p>
+      </section>
+    </footer>
   </main>
-  <footer>
-    <div class="container">
-      <p>Posts: CC-BY-SA | Source code: AGPL-3.0</p>
-    </div>
-  </footer>
+  <script>
+    function toggleMenu() {
+      const el = document.getElementById("topnav-items");
+      el.className === "topnav-list" ? el.className += " navopen" : el.className = "topnav-list";
+    }
+  </script>
 </body>
 </html>

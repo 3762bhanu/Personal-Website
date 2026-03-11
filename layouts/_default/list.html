@@ -1,12 +1,14 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-{{ with .Content }}<div class="content">{{ . }}</div>{{ end }}
-<ul class="post-list">
-  {{ range .Pages.ByDate.Reverse }}
-  <li>
-    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-    <a href="{{ .Permalink }}">{{ .Title }}</a>
-  </li>
-  {{ end }}
-</ul>
+<section class="container list">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div>{{ . }}</div>{{ end }}
+  <ul>
+    {{ range .Pages.ByDate.Reverse }}
+    <li>
+      <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</section>
 {{ end }}

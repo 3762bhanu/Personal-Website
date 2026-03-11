@@ -1,15 +1,24 @@
 {{ define "main" }}
-<section class="home">
-  <h1>{{ .Site.Title }}</h1>
-  <h2>{{ .Site.Params.tagline }}</h2>
-  <div class="links">
-    <a href="mailto:{{ .Site.Params.email }}">Email</a>
-    <a href="{{ .Site.Params.github }}" rel="noopener noreferrer">Github</a>
-    <a href="{{ .Site.Params.twitter }}" rel="noopener noreferrer">Twitter</a>
-    <a href="{{ .Site.Params.linkedin }}" rel="noopener noreferrer">LinkedIn</a>
-  </div>
-  <div class="content">
-    {{ .Content }}
+<style>
+  .home { text-align: center; }
+  .home h1 { margin-bottom: 1.6rem; }
+  .home h2 { font-size: 2.4rem; margin-top: 0; margin-bottom: 3.6rem; }
+  .home ul { list-style: none; margin: 0; padding: 0; }
+  .home li { display: inline-block; position: relative; }
+  .home li a { margin: 0 .6rem; }
+  footer .ai-disclaimer { display: none; }
+  @media screen and (max-width: 1000px) { h2 { font-size: 1.2em !important; } }
+</style>
+<section class="container centered">
+  <div class="home">
+    <h1>{{ .Site.Title }}</h1>
+    <h2>{{ .Site.Params.tagline }}</h2>
+    <ul>
+      <li><a href="mailto:{{ .Site.Params.email }}">Email</a></li>
+      <li><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">Github</a></li>
+      <li><a href="{{ .Site.Params.twitter }}" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+      <li><a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    </ul>
   </div>
 </section>
 {{ end }}

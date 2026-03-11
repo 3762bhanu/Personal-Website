@@ -1,11 +1,17 @@
 {{ define "main" }}
-<article>
+{{ if eq .Section "blog" }}
+<article class="blogpost container">
   <h1>{{ .Title }}</h1>
-  {{ if .Date }}
-  <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-  {{ end }}
-  <div class="content">
+  <time>{{ .Date.Format "January 2, 2006" }}</time>
+  <div class="post-content">
     {{ .Content }}
   </div>
+  <hr class="endofpost">
 </article>
+{{ else }}
+<section class="container">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+</section>
+{{ end }}
 {{ end }}

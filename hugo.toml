@@ -1,4 +1,4 @@
-baseURL = "https://bhanuprakash.github.io/"
+baseURL = "https://3762bhanu.github.io/"
 languageCode = "en-us"
 title = "Bhanu Prakash Singh"
 
@@ -6,9 +6,9 @@ title = "Bhanu Prakash Singh"
   description = "Software Engineer"
   tagline = "Engineering, Systems, and Ideas"
   email = "bhanu@example.com"
-  github = "https://github.com/bhanuprakash"
-  twitter = "https://twitter.com/bhanuprakash"
-  linkedin = "https://linkedin.com/in/bhanuprakash"
+  github = "https://github.com/3762bhanu"
+  twitter = "https://twitter.com/3762bhanu"
+  linkedin = "https://linkedin.com/in/3762bhanu"
 
 [[menus.main]]
   name = "About"
